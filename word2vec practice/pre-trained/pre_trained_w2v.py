@@ -3,13 +3,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
+from scipy.stats import pearsonr, spearmanr
 
 # Load Google's pre-trained Word2Vec model.
 model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
 
 vocab = model.vocab.keys()
 
+# ws353
 dataset = pd.read_csv('./ws353/combined.csv')
+
+# rg65
+dataset = pd.read_csv('./rg65/EN-RG-65.txt', sep='\t', header=None)
 
 words = dataset.iloc[:, 0].values
 
@@ -48,3 +53,9 @@ for i in range(len(dataset.values)):
 
 cs = np.array(cs)
 human_cs = dataset.iloc[:, 2].values
+
+# Pearson Correlation
+pearson_corr = pearsonr(cs, human_cs)
+
+# Spearman Correlation
+spearman_corr = spearmanr(cs, human_cs)

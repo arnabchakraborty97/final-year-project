@@ -1,0 +1,7 @@
+WS353
+    - Pearson: 0.65
+    - Spearman: 0.70
+    
+RG65
+    - Pearson: 0.77
+    - Spearman: 0.76

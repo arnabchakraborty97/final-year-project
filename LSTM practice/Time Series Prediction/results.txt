@@ -1,0 +1,11 @@
+LSTM without memory state
+    - TrainScore: 22.93
+    - TestScore: 47.53
+    
+LSTM with window and timesteps and memory state
+    - TrainScore: 29.69
+    - TestScore: 58.88
+    
+Stacked LSTM
+    - TrainScore: 29.84
+    - TestScore: 79.62

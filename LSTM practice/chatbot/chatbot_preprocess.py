@@ -6,7 +6,7 @@ import numpy as np
 from gensim import corpora, models, similarities
 import pickle
 
-model = gensim.models.KeyedVectors.load_word2vec_format('../word2vec practice/pre-trained/GoogleNews-vectors-negative300.bin', binary=True)
+model = gensim.models.KeyedVectors.load_word2vec_format('../../word2vec practice/pre-trained/GoogleNews-vectors-negative300.bin', binary=True)
 file = open('conversation.json')
 data = json.load(file)
 cor = data['conversations']
@@ -62,5 +62,5 @@ for tok_sent in vec_y:
 		for i in range(15 - len(tok_sent)):
 			tok_sent.append(sentend)
 
-with open('conversation.pickle', 'w') as f:
+with open('conversation.pickle', 'wb') as f:
 	pickle.dump([vec_x, vec_y], f)

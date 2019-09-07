@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 import theano
 theano.config.optimizer = 'None'
 
-with open('conversation.pickle') as f:
+with open('conversation.pickle', 'rb') as f:
 	vec_x, vec_y = pickle.load(f)
 
 vec_x = np.array(vec_x, dtype = np.float64)

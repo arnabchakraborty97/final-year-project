@@ -1,1 +1,5 @@
 venv/
+.vscode/
+frames/
+kg-bert/
+Plant Disease/
